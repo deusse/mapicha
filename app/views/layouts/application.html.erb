@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mapicha</title>
+  <title>Mapich | <%= content_for?(:title) ? yield(:title) : "Picture-sharing App" %></title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+<div class="header_wrapper">
+	<div class="logo">
+		<%= link_to "Mapicha", root_url %>
+	</div>
+	<div id="login_user_status">
+		<%= render :partial => "layouts/login_state" %>
+	</div>
+</div>
+<div id="container">
+	<%= yield %>
+</div>
 
 </body>
 </html>

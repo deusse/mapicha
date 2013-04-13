@@ -27,4 +27,7 @@ Mapicha::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  # Enable sending of emails from local app
+   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end
